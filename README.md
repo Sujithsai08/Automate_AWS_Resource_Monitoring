@@ -69,7 +69,7 @@ Ensure the script has execution permissions:
 ```bash
 chmod +x aws_resource_tracker.sh
 ```
-###Run the script manually:
+### Run the script manually:
 ```bash
 ./aws_resource_tracker.sh
 ```
