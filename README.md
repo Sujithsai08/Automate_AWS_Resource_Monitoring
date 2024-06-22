@@ -1,4 +1,4 @@
-# Automated AWS Resource Management Script
+# Automated AWS Resource Monitoring Script
 
 ## Introduction
 
@@ -32,7 +32,8 @@ This repository contains a Bash script designed to automate the daily monitoring
 
 ### Prerequisites
 
-- AWS CLI configured with appropriate IAM permissions.
+- AWS CLI installed and configured. Run `aws configure` to set up your credentials and region.
+- AWS CLI configured with appropriate IAM permissions to access EC2, S3, Lambda, CloudWatch, and SNS services.
 - AWS SNS Topic ARN for sending notifications.
 - `bc` utility for floating-point arithmetic.
 
@@ -41,3 +42,36 @@ This repository contains a Bash script designed to automate the daily monitoring
 ```bash
 git clone https://github.com/yourusername/aws-resource-management-script.git
 cd aws-resource-management-script
+```
+
+###Configure AWS CLI
+Ensure the AWS CLI is installed and configured. If not already configured, use the following command:
+```bash
+aws configure
+```
+You will be prompted to enter your AWS Access Key ID, Secret Access Key, region, and output format.
+
+
+###Set Up Environment Variables
+Update the script with your AWS region and SNS Topic ARN.
+```bash
+REGION='us-east-1'  # Your AWS region
+SNS="arn:aws:sns:us-east-1:701088230187:alert"  # Your SNS Topic ARN
+```
+
+###Set Up Cron Job
+Schedule the script to run daily at 2:00 AM by adding the following line to your crontab file:
+```bash
+0 2 * * * /path/to/your/aws_resource_tracker.sh
+```
+###Running the Script Manually
+Ensure the script has execution permissions:
+```bash
+chmod +x script.sh
+```
+###Run the script manually:
+```bash
+./aws_resource_tracker.sh
+```
+
+
