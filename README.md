@@ -28,27 +28,16 @@ This repository contains a Bash script designed to automate the daily monitoring
 - **Automated Alerts**:
   - Sends email notifications via AWS SNS for active resources and threshold breaches.
 
-## Prerequisites
+## How to Execute the Code
+
+### Prerequisites
 
 - AWS CLI configured with appropriate IAM permissions.
 - AWS SNS Topic ARN for sending notifications.
 - `bc` utility for floating-point arithmetic.
 
-## Setup
-
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/sujithsai08/aws-resource-management-script.git
-cd aws_resource_tracker
-
-Configure AWS CLI
-Ensure the AWS CLI is configured with appropriate IAM permissions to access EC2, S3, Lambda, CloudWatch, and SNS services.
-
-Set Up Environment Variables
-Update the script with your AWS region and SNS Topic ARN.
-REGION='us-east-1'  # Your AWS region
-SNS="arn:aws:sns:us-east-1:701088230187:alert"  # Your SNS Topic ARN
-###execute 
-./sh aws_resource_tracker.sh
-
+git clone https://github.com/yourusername/aws-resource-management-script.git
+cd aws-resource-management-script
